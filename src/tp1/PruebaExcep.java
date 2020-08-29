@@ -3,20 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package progconc;
+package tp1;
 
-import tp1.PruebaExcep;
+import Utiles.TecladoIn;
+
 /**
  *
  * @author b h
  */
-public class ProgConc {
+public class PruebaExcep {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        PruebaExcep.main();
+    public static void main() {
+
     }
-    
+
 }
