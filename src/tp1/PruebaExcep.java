@@ -16,7 +16,8 @@ public class PruebaExcep {
 
     public static void main() {
 //        ingrEdad();
-        jugarRuleta();
+//        jugarRuleta();
+        listarColeccion();
     }
 
     public static int ingrEdad() {
@@ -52,8 +53,35 @@ public class PruebaExcep {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
-        
+
         return suceso;
+    }
+
+    public static boolean listarColeccion() {
+        boolean suceso = true;
+        int[] col = ingrColeccion();
+
+        try {
+            for (int i = 0; i < 7; i++) {
+                System.out.println("Elem " + i + ": " + col[i]);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Error: el arreglo tiene menos de 7 elementos.");
+            suceso = false;
+        }
+
+        return suceso;
+    }
+
+    public static int[] ingrColeccion() {
+        int n;
+        int[] col = new int[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Ingrese un número");
+            n = TecladoIn.readLineInt();
+            col[i] = n;
+        }
+        return col;
     }
 
 }
