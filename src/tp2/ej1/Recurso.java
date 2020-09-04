@@ -1,23 +1,19 @@
+package tp2.ej1;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package progconc;
-
-import tp2.ej1.TesteoRecurso;
 
 /**
  *
  * @author b h
  */
-public class ProgConc {
+public class Recurso {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        TesteoRecurso.main();
+    static void uso() {
+        Thread t = Thread.currentThread();
+        System.out.println("en recurso- Soy: " + t.getName());
     }
-
 }
