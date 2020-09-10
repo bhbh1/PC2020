@@ -17,7 +17,7 @@ public class Main {
         Thread Manuel = new Thread(vc, "Manuel");
         Luis.start();
         Manuel.start();
-        Luis.join();
-        Manuel.join();
+//        Luis.join();
+//        Manuel.join();
     }
 }

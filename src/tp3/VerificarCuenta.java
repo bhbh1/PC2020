@@ -16,7 +16,7 @@ public class VerificarCuenta implements Runnable {
 
     private CuentaBanco cb = new CuentaBanco();
 
-    private void HacerRetiro(int cantidad) throws InterruptedException {
+    private synchronized void HacerRetiro(int cantidad) throws InterruptedException {
         if (cb.getBalance() >= cantidad) {
             System.out.println(Thread.currentThread().getName() +
                     " está realizando un retiro de: " + cantidad + ".");
