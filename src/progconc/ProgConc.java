@@ -5,7 +5,7 @@
  */
 package progconc;
 
-import tp3.PingPong;
+import tp3.Main;
 
 /**
  *
@@ -18,10 +18,7 @@ public class ProgConc {
      */
     public static void main(String[] args) {
         try {
-            PingPong.main(args);
-        } catch (InterruptedException e) {
-            System.err.println("Interrupted exception");
-            e.printStackTrace();
+            Main.main(args);
         } catch (Exception e) {
             System.out.println("Excepción: ");
             e.printStackTrace();
