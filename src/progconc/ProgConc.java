@@ -5,8 +5,7 @@
  */
 package progconc;
 
-import tp2.ej1.TesteoRecurso;
-import tp2.ej2.ThreadTesting;
+import tp3.PingPong;
 
 /**
  *
@@ -18,7 +17,15 @@ public class ProgConc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ThreadTesting.main();
+        try {
+            PingPong.main(args);
+        } catch (InterruptedException e) {
+            System.err.println("Interrupted exception");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Excepción: ");
+            e.printStackTrace();
+        }
     }
 
 }
