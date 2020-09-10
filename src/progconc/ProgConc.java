@@ -6,6 +6,7 @@
 package progconc;
 
 import tp2.ej1.TesteoRecurso;
+import tp2.ej2.ThreadTesting;
 
 /**
  *
@@ -17,7 +18,7 @@ public class ProgConc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        TesteoRecurso.main();
+        ThreadTesting.main();
     }
 
 }
