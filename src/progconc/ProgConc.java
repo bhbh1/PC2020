@@ -5,7 +5,7 @@
  */
 package progconc;
 
-import tp3.Main;
+import tp3.ej2.Main;
 
 /**
  *
