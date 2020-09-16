@@ -77,8 +77,22 @@ public class Auto extends Vehiculo implements Runnable {
     }
 
     private void cargarNafta() throws InterruptedException {
+        int miTurno;
         System.out.println(this.patente + " llegó al surtidor");
-        this.surtidor.cargarNafta(this.patente);
-    }
+        ManejadorTurnos turnos = this.surtidor.getTurnos();
+        miTurno = turnos.obtenerTurno();
+        System.out.println("TURNO " + this.patente + ": " + miTurno);
 
+        if (miTurno == turnos.getTurnoActual()) {
+            this.surtidor.cargarNafta(this.patente);
+        } else {
+            while (miTurno != turnos.getTurnoActual()) {
+
+            }
+            if (miTurno == turnos.getTurnoActual()) {
+                this.surtidor.cargarNafta(this.patente);
+            }
+        }
+
+    }
 }

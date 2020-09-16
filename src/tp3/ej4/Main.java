@@ -12,7 +12,7 @@ package tp3.ej4;
 public class Main {
 
     public static void main(String[] args) {
-        int cant = 5;
+        int cant = 2;
         Surtidor surt = new Surtidor();
         Auto[] autos = new Auto[cant];
         for (int i = 0; i < cant; i++) {

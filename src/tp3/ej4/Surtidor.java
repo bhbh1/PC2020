@@ -11,9 +11,22 @@ package tp3.ej4;
  */
 public class Surtidor {
 
+    private ManejadorTurnos turnos;
+
+    public Surtidor() {
+        this.turnos = new ManejadorTurnos();
+    }
+
+    public ManejadorTurnos getTurnos() {
+        return turnos;
+    }
+
     public synchronized void cargarNafta(String patente) throws InterruptedException {
-        System.out.println(patente + " cargando nafta");
+        System.out.println(patente + " cargando nafta" + "turnoActual: " +
+                turnos.getTurnoActual() + ". ultimo: " +
+                turnos.getTurnoActual());
         Thread.sleep(700);
         System.out.println(patente + " cargó nafta");
+        this.turnos.aumentarTurnoActual();
     }
 }
