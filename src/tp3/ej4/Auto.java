@@ -16,13 +16,16 @@ public class Auto extends Vehiculo implements Runnable {
     private final String marca;
     private int kmFaltantesParaElService;
     private int kmTotal = 0;
+    private Surtidor surtidor;
 
-    public Auto(String patente, String modelo, String marca, int kmFaltantesParaElService) {
+    public Auto(String patente, String modelo, String marca,
+            int kmFaltantesParaElService, Surtidor surtidor) {
         this.patente = patente;
         this.modelo = modelo;
         this.marca = marca;
         this.kmFaltantesParaElService = kmFaltantesParaElService;
         this.cantRuedas = 4;
+        this.surtidor = surtidor;
     }
 
     public String getPatente() {
@@ -37,11 +40,11 @@ public class Auto extends Vehiculo implements Runnable {
         return marca;
     }
 
-    public int getKmFaltantesParaElService() {
+    public synchronized int getKmFaltantesParaElService() {
         return kmFaltantesParaElService;
     }
 
-    public void setKmFaltantesParaElService(int kmFaltantesParaElService) {
+    public synchronized void setKmFaltantesParaElService(int kmFaltantesParaElService) {
         this.kmFaltantesParaElService = kmFaltantesParaElService;
     }
 
@@ -73,9 +76,9 @@ public class Auto extends Vehiculo implements Runnable {
         this.kmTotal = (this.kmTotal + km);
     }
 
-    private synchronized void cargarNafta() throws InterruptedException {
-        System.out.println(this.patente + " carga nafta ");
-        Thread.sleep(650);
+    private void cargarNafta() throws InterruptedException {
+        System.out.println(this.patente + " llegó al surtidor");
+        this.surtidor.cargarNafta(this.patente);
     }
 
 }

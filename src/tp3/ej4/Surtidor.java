@@ -9,11 +9,11 @@ package tp3.ej4;
  *
  * @author b h
  */
-public class Surtidor implements Runnable {
+public class Surtidor {
 
-    @Override
-    public void run() {
-
+    public synchronized void cargarNafta(String patente) throws InterruptedException {
+        System.out.println(patente + " cargando nafta");
+        Thread.sleep(700);
+        System.out.println(patente + " cargó nafta");
     }
-
 }

@@ -13,9 +13,10 @@ public class Main {
 
     public static void main(String[] args) {
         int cant = 5;
+        Surtidor surt = new Surtidor();
         Auto[] autos = new Auto[cant];
         for (int i = 0; i < cant; i++) {
-            autos[i] = new Auto("p" + i, "mod" + i, "mar" + i, 199);
+            autos[i] = new Auto("p" + i, "mod" + i, "mar" + i, 199, surt);
         }
 
         Thread[] hilos = new Thread[cant];
