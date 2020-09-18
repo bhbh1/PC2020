@@ -19,11 +19,11 @@ public class Personaje {
         this.maxVida = this.vida;
     }
 
-    public int getVida() {
+    public synchronized int getVida() {
         return vida;
     }
 
-    public void setVida(int vida) {
+    public synchronized void setVida(int vida) {
         this.vida = vida;
     }
 

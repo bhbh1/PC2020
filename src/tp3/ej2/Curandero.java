@@ -21,15 +21,17 @@ public class Curandero extends Personaje implements Runnable {
 
     @Override
     public void run() {
+        this.curar();
+    }
+
+    public void curar() {
         synchronized (pj) {
-            System.out.println("Inicio curandero");
             int vida = pj.getVida();
-            System.out.println("Vida c: "+pj.getVida());
+            System.out.println("Vida c: " + pj.getVida());
             vida = vida + 3;
             pj.setVida(vida);
-            System.out.println("Vida c: "+pj.getVida());
+            System.out.println("Vida c: " + pj.getVida());
         }
-        System.out.println("Fin curandero");
     }
 
 }

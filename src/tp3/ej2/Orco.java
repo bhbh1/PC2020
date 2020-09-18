@@ -21,15 +21,17 @@ public class Orco extends Personaje implements Runnable {
 
     @Override
     public void run() {
+        this.golpear();
+    }
+
+    public void golpear() {
         synchronized (pj) {
-            System.out.println("Inicio orco");
             int vida = pj.getVida();
             System.out.println("Vida o: " + pj.getVida());
             vida = vida - 3;
             pj.setVida(vida);
             System.out.println("Vida o: " + pj.getVida());
         }
-        System.out.println("Fin orco");
     }
 
 }
