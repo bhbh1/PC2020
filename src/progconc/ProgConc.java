@@ -5,6 +5,8 @@
  */
 package progconc;
 
+import Utiles.IO;
+
 /**
  *
  * @author b h
@@ -15,7 +17,9 @@ public class ProgConc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        for (int i = 0; i < 43; i++) {
+            IO.sColLibre(i, "Test");
+        }
     }
-    
+
 }

@@ -44,4 +44,8 @@ public class IO {
 
         return marcador + mensaje;
     }
+
+    public static void sColLibre(int id, String mensaje) {
+        System.out.println(sCol(id, mensaje, id));
+    }
 }
