@@ -48,4 +48,9 @@ public class IO {
     public static void sColLibre(int id, String mensaje) {
         System.out.println(sCol(id, mensaje, id));
     }
+
+    public static void sColFijo(int id, String mensaje,
+            int colorFijo) {
+        System.out.println(sCol(id, mensaje, colorFijo));
+    }
 }

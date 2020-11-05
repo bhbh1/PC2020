@@ -17,8 +17,8 @@ public class ProgConc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        for (int i = 0; i < 43; i++) {
-            IO.sColLibre(i, "Test");
+        for (int i = 0; i < 13; i++) {
+            IO.sColFijo(i, "Test", 1);
         }
     }
 
