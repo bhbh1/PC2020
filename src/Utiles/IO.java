@@ -55,4 +55,8 @@ public class IO {
     public static void sCol(int colorFijo, int id, String mensaje) {
         System.out.println(colMsg(colorFijo, id, mensaje));
     }
+
+    public static String getMarcador(int id) {
+        return colores[id % 7] + "■" + ANSI_RESET;
+    }
 }
