@@ -31,7 +31,7 @@ public class IO {
         }
         //Primer color e id
         String marcador = colores[colorFijo % 7] + "■" + ANSI_RESET +
-                 cero + id;
+                cero + id;
         //Alterna espaciado durante 6 elementos
         if (id % 12 > 5) {
             marcador += "  ";
@@ -40,7 +40,7 @@ public class IO {
         }
         //Segundo color con o sin espaciado
         marcador += colores[(id % 6)] + "■" + ANSI_RESET +
-                 espacio + "|";
+                espacio + "|";
 
         return marcador + mensaje;
     }
@@ -57,4 +57,31 @@ public class IO {
     public static String getMarcador(int id) {
         return colores[id % 7] + "■" + ANSI_RESET;
     }
+
+    //Para ser usado antes de que haya concurrencia
+    //Lista las etiquetas acompañadas de su respectivo color
+    public static String infoEtiquetas(String[] etiquetas, int[] ids) {
+        String s = "";
+        int tamEt = etiquetas.length;
+        try {
+            for (int i = 0; i < tamEt; i++) {
+                //Baja linea cada dos etiquetas
+                if ((i % 2 == 0) && (i != 0)) {
+                    s += "\n";
+                }
+                s += etiquetas[i] + ": ";
+                s += getMarcador(ids[i]);
+                //Agrega coma si no es la ultima etiqueta
+                if (i < tamEt - 1) {
+                    s += ", ";
+                }
+
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.print("El arreglo de etiquetas tiene mas elementos " +
+                    "que el arreglo de ids");
+        }
+        return s;
+    }
+
 }
