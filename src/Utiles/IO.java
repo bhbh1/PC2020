@@ -54,27 +54,27 @@ public class IO {
 
         return marcador + mensaje;
     }
-    
+
     //Simple
     //Varian ambos colores
     public static void sCol(int id, String mensaje) {
-        System.out.println(" "+colMsg(id, id, mensaje, false));
+        System.out.println(" " + colMsg(id, id, mensaje, false));
     }
 
     //Varia el segundo color
     public static void sCol(int colorFijo, int id, String mensaje) {
-        System.out.println(" "+colMsg(colorFijo, id, mensaje, false));
+        System.out.println(" " + colMsg(colorFijo, id, mensaje, false));
     }
 
     //Espaciado
     //Varian ambos colores y tiene mucho espaciado
     public static void sColE(int id, String mensaje) {
-        System.out.println(" "+colMsg(id, id, mensaje, true));
+        System.out.println(" " + colMsg(id, id, mensaje, true));
     }
 
     //Varia el segundo color y tiene mucho espaciado
     public static void sColE(int colorFijo, int id, String mensaje) {
-        System.out.println(" "+colMsg(colorFijo, id, mensaje, true));
+        System.out.println(" " + colMsg(colorFijo, id, mensaje, true));
     }
 
     //Marcado
@@ -102,6 +102,24 @@ public class IO {
 
     public static String getMarcador(int id) {
         return colores[id % 7] + "■" + ANSI_RESET;
+    }
+
+    public static String getMarcadorCompleto(int id) {
+        String cero = "";
+        if (id < 10) {
+            cero = "0";
+        }
+        return colores[id % 7] + "■" + ANSI_RESET
+                + cero + id + colores[id % 6] + "■" + ANSI_RESET;
+    }
+
+    public static String getMarcadorCompleto(int colorFijo, int id) {
+        String cero = "";
+        if (id < 10) {
+            cero = "0";
+        }
+        return colores[colorFijo % 7] + "■" + ANSI_RESET
+                + cero + id + colores[id % 6] + "■" + ANSI_RESET;
     }
 
     //Para ser usado antes de que haya concurrencia
