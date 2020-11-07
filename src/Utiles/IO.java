@@ -20,8 +20,9 @@ public class IO {
 
     //colorFijo: define el primer color
     //id: numero que se muestra y que define el segundo color
-    //mensaje: texto a mostrar
-    public static String colMsg(int colorFijo, int id, String mensaje) {
+    //mensaje: texto a mostrar, muchoEsp: define la frecuencia del espaciado
+    public static String colMsg(int colorFijo, int id, String mensaje,
+            boolean muchoEsp) {
         String cero = "";
         String espacio = "";
         ///Alternativa: usar String.format("%02d", id),
@@ -32,12 +33,21 @@ public class IO {
         //Primer color e id
         String marcador = colores[colorFijo % 7] + "■" + ANSI_RESET
                 + cero + id;
-        //Alterna espaciado durante 6 elementos
-        if (id % 12 > 5) {
-            marcador += "  ";
+        //muchoEsp varia cada que tan frecuente se agrega espaciado
+        if (muchoEsp) {
+            if (id % 4 > 1) {
+                marcador += "  ";
+            } else {
+                espacio = "  ";
+            }
         } else {
-            espacio = "  ";
+            if (id % 12 > 5) {
+                marcador += "  ";
+            } else {
+                espacio = "  ";
+            }
         }
+
         //Segundo color con o sin espaciado
         marcador += colores[(id % 6)] + "■" + ANSI_RESET
                 + espacio + "|";
@@ -48,12 +58,23 @@ public class IO {
     //Simple
     //Varian ambos colores
     public static void sCol(int id, String mensaje) {
-        System.out.println(colMsg(id, id, mensaje));
+        System.out.println(colMsg(id, id, mensaje, false));
     }
 
     //Varia el segundo color
     public static void sCol(int colorFijo, int id, String mensaje) {
-        System.out.println(colMsg(colorFijo, id, mensaje));
+        System.out.println(colMsg(colorFijo, id, mensaje, false));
+    }
+
+    //Espaciado
+    //Varian ambos colores y tiene mucho espaciado
+    public static void sColE(int id, String mensaje) {
+        System.out.println(colMsg(id, id, mensaje, true));
+    }
+
+    //Varia el segundo color y tiene mucho espaciado
+    public static void sColE(int colorFijo, int id, String mensaje) {
+        System.out.println(colMsg(colorFijo, id, mensaje, true));
     }
 
     public static String getMarcador(int id) {
