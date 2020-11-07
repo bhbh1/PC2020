@@ -20,6 +20,14 @@ public class ProgConc {
         String s = "Test";
         System.out.println("Mensaje coloreado");
         System.out.println(IO.colMsg(0, 1, s));
+        System.out.println("Varian ambos");
+        for (int i = 0; i < 12; i++) {
+            IO.sCol(i, s);
+        }
+        System.out.println("Varia el segundo");
+        for (int i = 0; i < 12; i++) {
+            IO.sCol(1, i, s);
+        }
     }
 
 }

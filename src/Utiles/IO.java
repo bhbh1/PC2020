@@ -44,5 +44,15 @@ public class IO {
 
         return marcador + mensaje;
     }
+    
+    //Simple
+    //Varian ambos colores
+    public static void sCol(int id, String mensaje) {
+        System.out.println(colMsg(id, id, mensaje));
+    }
 
+    //Varia el segundo color
+    public static void sCol(int colorFijo, int id, String mensaje) {
+        System.out.println(colMsg(colorFijo, id, mensaje));
+    }
 }
