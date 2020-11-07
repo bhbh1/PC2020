@@ -18,7 +18,7 @@ public class ProgConc {
      */
     public static void main(String[] args) {
         for (int i = 0; i < 13; i++) {
-            IO.sColFijo(i, "Test", 1);
+            IO.sColFijo(1, i, "Test");
         }
     }
 

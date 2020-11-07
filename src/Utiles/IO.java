@@ -18,10 +18,10 @@ public class IO {
         "\u001B[32m", "\u001B[33m", "\u001B[34m", "\u001B[35m",
         "\u001B[36m", "\u001B[37m"};
 
+    //colorFijo: define el primer color
     //id: numero que se muestra y que define el segundo color
-    //mensaje: texto a mostrar, colorFijo: define el primer color
-    public static String sCol(int id, String mensaje,
-            int colorFijo) {
+    //mensaje: texto a mostrar, 
+    public static String sCol(int colorFijo, int id, String mensaje) {
         String cero = "";
         String espacio = "";
         ///Alternativa: usar String.format("%02d", id),
@@ -46,12 +46,11 @@ public class IO {
     }
 
     public static void sColLibre(int id, String mensaje) {
-        System.out.println(sCol(id, mensaje, id));
+        System.out.println(sCol(id, id, mensaje));
     }
 
-    public static void sColFijo(int id, String mensaje,
-            int colorFijo) {
-        System.out.println(sCol(id, mensaje, colorFijo));
+    public static void sColFijo(int id, int colorFijo, String mensaje) {
+        System.out.println(sCol(id, colorFijo, mensaje));
     }
 
     public static String getMarcador(int id) {
