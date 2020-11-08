@@ -8,7 +8,7 @@ package progconc;
 import Utiles.IO;
 import Utiles.IOR;
 
-import teoria.ejBufferInfinito.Main;
+import teoria.ejBufferFinitoMonitor.Main;
 
 /**
  *
