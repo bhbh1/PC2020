@@ -6,6 +6,7 @@
 package progconc;
 
 import Utiles.IO;
+import Utiles.IOR;
 
 /**
  *
@@ -63,9 +64,9 @@ public class ProgConc {
         System.out.println("Varia el segundo con mensaje a color");
         for (int i = 0; i < 12; i++) {
             if (i % 4 < 2) {
-                IO.sColC(1, i, s);
+                System.out.println(IOR.sColC(1, i, s));
             } else {
-                IO.sColC(2, i, s);
+                System.out.println(IOR.sColC(2, i, s));
             }
         }
     }
