@@ -54,6 +54,10 @@ public class IO {
         return marcador;
     }
 
+    public static String colTxt(int colorFijo, String msg) {
+        return colores[colorFijo % 7] + msg + ANSI_RESET;
+    }
+
     //Simple
     //Varian ambos colores
     public static void sCol(int id, String mensaje) {
@@ -97,6 +101,37 @@ public class IO {
     public static void sColEM(int colorFijo, int id, String mensaje,
             char marca) {
         System.out.println(marca + colMsg(colorFijo, id, true) + mensaje);
+    }
+
+    //Mensajes a color en metodos con colorFijo
+    //Simple
+    //Varia el segundo color
+    public static void sColC(int colorFijo, int id, String mensaje) {
+        System.out.println(" " + colMsg(colorFijo, id, false)
+                + colores[colorFijo % 7] + mensaje + ANSI_RESET);
+    }
+
+    //Espaciado
+    //Varia el segundo color y tiene mucho espaciado
+    public static void sColEC(int colorFijo, int id, String mensaje) {
+        System.out.println(" " + colMsg(colorFijo, id, true)
+                + colores[colorFijo % 7] + mensaje + ANSI_RESET);
+    }
+
+    //Marcado
+    //Varia el segundo color y tiene marca
+    public static void sColMC(int colorFijo, int id, String mensaje,
+            char marca) {
+        System.out.println(marca + colMsg(colorFijo, id, false)
+                + colores[colorFijo % 7] + mensaje + ANSI_RESET);
+    }
+
+    //Marcado y espaciado
+    //Varia el segundo color, tiene mucho espaciado y esta marcado
+    public static void sColEMC(int colorFijo, int id, String mensaje,
+            char marca) {
+        System.out.println(marca + colMsg(colorFijo, id, true)
+                + colores[colorFijo % 7] + mensaje + ANSI_RESET);
     }
 
     public static String getMarcador(int id) {

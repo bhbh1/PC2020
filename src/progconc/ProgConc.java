@@ -52,13 +52,21 @@ public class ProgConc {
 //        for (int i = 0; i < 4; i++) {
 //            IO.sColEM(1, i, s, '>');
 //        }
-        System.out.println("Marcador, varian ambos");
-        for (int i = 0; i < 42; i++) {
-            System.out.println(IO.getMarcadorCompleto(i));
-        }
-        System.out.println("Marcador, varia el segundo");
-        for (int i = 0; i < 6; i++) {
-            System.out.println(IO.getMarcadorCompleto(1, i));
+//        System.out.println("Marcador, varian ambos");
+//        for (int i = 0; i < 42; i++) {
+//            System.out.println(IO.getMarcadorCompleto(i));
+//        }
+//        System.out.println("Marcador, varia el segundo");
+//        for (int i = 0; i < 6; i++) {
+//            System.out.println(IO.getMarcadorCompleto(1, i));
+//        }
+        System.out.println("Varia el segundo con mensaje a color");
+        for (int i = 0; i < 12; i++) {
+            if (i % 4 < 2) {
+                IO.sColC(1, i, s);
+            } else {
+                IO.sColC(2, i, s);
+            }
         }
     }
 }
