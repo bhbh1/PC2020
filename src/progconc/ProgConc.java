@@ -19,7 +19,7 @@ public class ProgConc {
     public static void main(String[] args) {
         String s = "Test";
 //        System.out.println("Mensaje coloreado");
-//        System.out.println(IO.colMsg(0, 1, s, false));
+//        System.out.println(IO.colMsg(0, 1, false)+s);
 //        System.out.println("Varian ambos");
 //        for (int i = 0; i < 12; i++) {
 //            IO.sCol(i, s);
