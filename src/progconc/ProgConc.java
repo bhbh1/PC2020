@@ -8,7 +8,7 @@ package progconc;
 import Utiles.IO;
 import Utiles.IOR;
 
-import tp6.ej8.Main;
+import tp6.ej9.Main;
 /**
  *
  * @author b h
