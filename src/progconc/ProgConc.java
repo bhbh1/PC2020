@@ -8,7 +8,7 @@ package progconc;
 import Utiles.IO;
 import Utiles.IOR;
 
-import herrera_braian_parcial2.ej1.Main;
+import herrera_braian_parcial2.ej2.Main;
 /**
  *
  * @author b h
